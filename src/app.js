@@ -22,7 +22,7 @@ fontLoader.load('fonts/Cursive Sans_Book.json', function (font) {
     const geometry = new TextGeometry(myText.innerHTML, {
         font: font,
         size: 150,
-        height: width / 6,
+        height: width / 4,
         curveSegments: 24,
         bevelEnabled: false,
         bevelThickness: 10,
@@ -60,7 +60,7 @@ fontLoader.load('fonts/Cursive Sans_Book.json', function (font) {
     renderer.setSize(window.innerWidth, window.innerHeight)
 
     // Animation
-    let duration = 40;
+    let duration = 10;
     let time = 0;
     function animate() {
         if (time < duration) {
@@ -82,10 +82,27 @@ fontLoader.load('fonts/Cursive Sans_Book.json', function (font) {
 
 const myText2 = document.getElementById("myText2")
 
-canvas.addEventListener("mouseenter", function(){
+myText2.addEventListener("mouseenter", function () {
     myText2.innerHTML = "oida"
 })
 
-canvas.addEventListener("mouseleave", function(){
+myText2.addEventListener("mouseleave", function () {
     myText2.innerHTML = "adio"
+})
+
+//------------------------------------------------------------------------
+
+gsap.from("#paraTitle", {
+    opacity: 0,
+    y: -50,
+    duration: 2,
+    ease: "power2.inOut",
+})
+
+gsap.from("#paraTitle2", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    delay: 0.5,
+    ease: "power2.inOut",
 })
