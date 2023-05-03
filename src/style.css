@@ -14,8 +14,15 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* --------------------------------------SECTION 1---------------------------------------- */
+
 #section1 {
-    height: 200vh;
+    height: 100vh;
+}
+
+#myCanvas {
+    width: 100vw;
+    height: 100vh;
 }
 
 #paraTitle {
@@ -59,7 +66,137 @@
     cursor: default;
 }
 
-#myCanvas {
-    width: 100vw;
+.trait {
+    position: fixed;
+    height: 80vh;
+    width: 2px;
+    background-color: black;
+}
+
+#trait1 {
+    top: 10%;
+    left: 4.5%;
+}
+
+#trait2 {
+    bottom: 10%;
+    right: 4.5%;
+}
+
+/* --------------------------------------SECTION 2---------------------------------------- */
+
+#section2 {
     height: 100vh;
+}
+
+.circle {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 130%;
+    left: 5%;
+    mix-blend-mode: exclusion;
+    transition: background-color 1s ease;
+}
+
+#circle7 {
+    transform: translateX(75vw);
+    background-image: url(../public/e.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle6 {
+    transform: translateX(62.5vw);
+    background-image: url(../public/u.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle5 {
+    transform: translateX(50vw);
+    background-image: url(../public/q.svg);
+    background-size: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle4 {
+    transform: translateX(37.5vw);
+    background-image: url(../public/s.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle3 {
+    transform: translateX(25vw);
+    background-image: url(../public/o.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle2 {
+    transform: translateX(12.5vw);
+    background-image: url(../public/i.svg);
+    background-size: 15%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle1 {
+    background-image: url(../public/K.svg);
+    background-size: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#paraSection2 {
+    width: 30vw;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 80%;
+}
+
+#section3 {
+    height: 100%;
+    margin-top: 10vh;
+    overflow: hidden;
+}
+
+#layerContainer {
+    padding: 0 9vw;
+    width: 100%;
+    height: 50vh;
+    background-image: url(../public/green_eyes.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+#layerContainer h2 {
+    font-size: 20em;
+    mix-blend-mode: difference;
+    color: red;
+}
+
+#humanoid {
+    display: none;
+}
+
+#section4 {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#paraSection3 {
+    width: 30vw;
+    text-align: center;
+    margin: 10em auto;
 }

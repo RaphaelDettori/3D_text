@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
-const width = window.innerWidth;
+const height = window.innerHeight;
 const myText = document.getElementById("myText");
 
 // Initialisez votre canevas WebGL
@@ -22,7 +22,7 @@ fontLoader.load('fonts/Cursive Sans_Book.json', function (font) {
     const geometry = new TextGeometry(myText.innerHTML, {
         font: font,
         size: 150,
-        height: width / 4,
+        height: height / 3,
         curveSegments: 24,
         bevelEnabled: false,
         bevelThickness: 10,
@@ -60,25 +60,42 @@ fontLoader.load('fonts/Cursive Sans_Book.json', function (font) {
     renderer.setSize(window.innerWidth, window.innerHeight)
 
     // Animation
-    let duration = 10;
+    let animId
     let time = 0;
     function animate() {
-        if (time < duration) {
-            requestAnimationFrame(animate);
-            time += 0.01;
-            let t = time / duration;
-            let ease = 1.5 - 0.8 * Math.cos(Math.PI * t);
-            let position = 40 * ease;
-            light.position.set(position * Math.cos(time), position * Math.sin(time), 50);
-            text.position.z = -50 + 10 * Math.sin(time);
-            renderer.render(scene, camera);
-        }
+        animId = requestAnimationFrame(animate);
+        time += 0.01;
+        light.position.set(200 * Math.cos(time), 200 * Math.sin(time), 100);
+        text.position.z = -50 + 10 * Math.sin(time);
+        renderer.render(scene, camera);
     }
-    animate();
+    // Créez un observer pour la section 2
+    const section2 = document.querySelector('#section2');
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.target.id === 'section2') {
+                if (entry.isIntersecting) {
+                    // La section 2 est visible, désactivez l'animation
+                    cancelAnimationFrame(animId);
+                } else {
+                    // La section 2 n'est pas visible, activez l'animation
+                    animate();
+                }
+            }
+        })
+    }, options);
+
+    // Ajoutez l'observer à la section 2
+    observer.observe(section2);
 
 });
 
-//------------------------------------------------------------------------
+//------------------------------------------------------------------------EFFET TITLE
 
 const myText2 = document.getElementById("myText2")
 
@@ -90,7 +107,9 @@ myText2.addEventListener("mouseleave", function () {
     myText2.innerHTML = "adio"
 })
 
-//------------------------------------------------------------------------
+//------------------------------------------------------------------------ GSAP
+
+gsap.registerPlugin(ScrollTrigger);
 
 gsap.from("#paraTitle", {
     opacity: 0,
@@ -106,3 +125,49 @@ gsap.from("#paraTitle2", {
     delay: 0.5,
     ease: "power2.inOut",
 })
+
+gsap.from("#trait1", {
+    height: 0,
+    duration: 2.5,
+    delay: 1,
+    ease: "power2.inOut",
+})
+
+gsap.from("#trait2", {
+    height: 0,
+    duration: 2.5,
+    delay: 1.5,
+    ease: "power2.inOut",
+})
+
+gsap.utils.toArray(".circle").forEach((circle, index) => {
+    gsap.from(circle, {
+        x: 0,
+        backgroundColor: "red",
+        duration: 1.5,
+        ease: "power2.inOut",
+        delay: index / 4,
+        scrollTrigger: {
+            trigger: ".circle",
+            start: "top 90%",
+        }
+
+    })
+})
+
+//----------------------------------------------CIRCLE-----------------------
+
+const circles = document.querySelectorAll(".circle");
+
+circles.forEach(circle => {
+    circle.addEventListener('mouseenter', function () {
+        circle.style.backgroundColor = "red";
+    })
+    circle.addEventListener('mouseleave', function () {
+        circle.style.backgroundColor = "white";
+    })
+})
+
+
+//-----------------------------------------------SVG------------------------
+
