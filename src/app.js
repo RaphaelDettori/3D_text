@@ -155,6 +155,32 @@ gsap.utils.toArray(".circle").forEach((circle, index) => {
     })
 })
 
+gsap.utils.toArray(".traitCard").forEach((trait, index) => {
+    gsap.from(trait, {
+        height: 0,
+        duration: 1,
+        ease: "power3.inOut",
+        delay: index / 4,
+        scrollTrigger: {
+            trigger: ".traitCard",
+            start: "top 80%"
+        }
+    })
+})
+
+gsap.utils.toArray(".paraCard").forEach((para, index) => {
+    gsap.from(para, {
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.inOut",
+        delay: index / 4,
+        scrollTrigger: {
+            trigger: ".traitCard",
+            start: "top 80%"
+        }
+    })
+})
+
 //----------------------------------------------CIRCLE-----------------------
 
 const circles = document.querySelectorAll(".circle");

@@ -103,55 +103,55 @@
 
 #circle7 {
     transform: translateX(75vw);
-    background-image: url(../public/e.svg);
-    background-size: 50%;
+    background-image: url(../public/F.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #circle6 {
     transform: translateX(62.5vw);
-    background-image: url(../public/u.svg);
-    background-size: 50%;
+    background-image: url(../public/i.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #circle5 {
     transform: translateX(50vw);
-    background-image: url(../public/q.svg);
-    background-size: 35%;
+    background-image: url(../public/T.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #circle4 {
     transform: translateX(37.5vw);
-    background-image: url(../public/s.svg);
-    background-size: 50%;
+    background-image: url(../public/A.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #circle3 {
     transform: translateX(25vw);
-    background-image: url(../public/o.svg);
-    background-size: 50%;
+    background-image: url(../public/E2.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #circle2 {
     transform: translateX(12.5vw);
-    background-image: url(../public/i.svg);
-    background-size: 15%;
+    background-image: url(../public/R.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #circle1 {
-    background-image: url(../public/K.svg);
-    background-size: 35%;
+    background-image: url(../public/C.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -164,13 +164,15 @@
     top: 80%;
 }
 
+/* --------------------------------------SECTION 3---------------------------------------- */
+
 #section3 {
-    height: 100%;
-    margin-top: 10vh;
+    height: 100vh;
     overflow: hidden;
 }
 
-#layerContainer {
+
+#layerContainer3 {
     padding: 0 9vw;
     width: 100%;
     height: 50vh;
@@ -180,23 +182,80 @@
     display: flex;
 }
 
-#layerContainer h2 {
+#layerContainer3 h2 {
     font-size: 20em;
     mix-blend-mode: difference;
     color: red;
-}
-
-#humanoid {
-    display: none;
-}
-
-#section4 {
-    height: 100vh;
-    overflow: hidden;
 }
 
 #paraSection3 {
     width: 30vw;
     text-align: center;
     margin: 10em auto;
+}
+
+/* --------------------------------------SECTION 4---------------------------------------- */
+
+#section4 {
+    height: 100vh;
+    margin-top: 10vh;
+    overflow: hidden;
+}
+
+#layerContainer4 {
+    padding: 0 9vw;
+    width: 100%;
+    height: 50vh;
+    background-image: url(../public/field.png);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+}
+
+#layerContainer4 h2 {
+    font-size: 20em;
+    mix-blend-mode: difference;
+    color: rgb(0, 255, 85);
+}
+
+#paraSection4 {
+    width: 30vw;
+    text-align: center;
+    margin: 10em auto;
+}
+
+/* --------------------------------------SECTION 5---------------------------------------- */
+
+#section5 {
+    height: 100vh;
+}
+
+#imgContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    padding: 0 5vw;
+}
+
+.card {
+    height: 35vw;
+}
+
+#imgContainer img {
+    width: 15vw;
+    filter: hue-rotate(50);
+    border-radius: 2em;
+}
+
+.traitCard {
+    width: 1px;
+    height: 10vw;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.card p {
+    width: 15vw;
+    text-align: center;
 }
